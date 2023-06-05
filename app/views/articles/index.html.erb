@@ -1,0 +1,16 @@
+<div id="articles">
+  <h1 class="page-title white">記事一覧</h1>
+  <% @articles.each do |article| %>
+    <section class="articleーlist">
+        <h2 class="a-title">
+            <a href="<%= article_path(article) %>" class="white">
+                <%= article.title %>
+            </a>
+        </h2>
+        <p class="a-updated_at white"><%= article.updated_at %></p>
+    </section>
+  <% end %>
+  <p style="color: green"><%= notice %></p>
+</div>
+
+

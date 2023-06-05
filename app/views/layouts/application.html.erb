@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>StudyBlog</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <header class="top">
+        <h1><a href="/" class="top-page white">StudyBlog</a></h1>
+        <nav class="article-nav">
+            <div class="a-nav-contents"><%= link_to '記事一覧', articles_path, class: "white"%></div>
+            <div class="a-nav-contents">
+                <% if current_user == @user || current_user.admin? %>
+                    <%= link_to '新規作成', 'articles/new', class: "white" %>
+                <% end %> 
+            </div>
+        </nav>
+    </header>
+    <main class="content-box">
+      <%= yield %>
+    </main>
+    <footer class="bottom">
+        <h2><a href="https://twitter.com/@sibui115" class="Twitter white">Twitter</a></h2>
+        <small class="copy-light white">&copy; Bushi-Shibui</small>
+    </footer>
+  </body>
+</html>

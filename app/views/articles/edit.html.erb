@@ -1,0 +1,9 @@
+<h1>編集</h1>
+<%= render "form", article: @article %>
+<br>
+<div class="setting-number">
+  <% if current_user == @user || current_user.admin? %>
+    <p>記事番号:<%= @article.id %></p>
+  <% end %>
+  <%= link_to @article.title, @article %>
+</div>

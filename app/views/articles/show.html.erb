@@ -1,0 +1,11 @@
+<section class="article-show">
+    <%= render @article %>
+    <p style="color: green"><%= notice %></p>
+    <div class="settings">
+      <% if current_user == @user || current_user.admin? %>
+        <%= link_to "編集", edit_article_path(@article), class: "setting-item" %>
+        <%= button_to "削除", @article, method: :delete, class: "setting-item" %>
+        <%= link_to "戻る", articles_path, class: "setting-item" %>
+      <% end %>
+    </div>
+</section>

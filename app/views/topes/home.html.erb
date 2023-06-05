@@ -1,0 +1,29 @@
+<div class="first-showed">
+    <h1 class="top-title">Let's start</h1>
+</div>
+<div class="introductions">
+    <div class="about_this_blog">
+        <h2 class="about-title">このブログでは</h2>
+        <p class="about-content">
+            このブログでは、大学の授業での学びを要約したり、中間試験の範囲を記録したりしています。
+            <br>
+            授業の内容を簡潔にまとめ、重要なポイントを伝えることを目指しています。なるべく難しい言葉を使わず、わかりやすく伝えることを心がけています。
+            <br>
+            また、中間試験の範囲についてもお知らせしています。試験の範囲を確認し、効率的な勉強計画を立てるのに役立ててください。
+            <br>
+        </p>
+    </div>
+    <div class="article-list">
+        <h2><a href="/articles"  class="list-title">記事一覧</a></h2>
+        <div class="a-lists">
+            <% @later_articles.each do |a| %>
+                <p>
+                    <a href="<%= article_path(a) %>" class="a-contents">
+                        <%= a.title %>
+                    </a>    
+                </p>
+            <% end %>
+        </div>
+        
+    </div>
+</div>
